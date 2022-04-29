@@ -1,5 +1,3 @@
-// task description: https://www.hackerrank.com/contests/ap-05-2019/challenges/labyr1-labyrinth
-
 #include <cmath>
 #include <cstdio>
 #include <vector>
