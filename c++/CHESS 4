@@ -1,0 +1,30 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    int t, m, n;
+
+    cin >> t;
+
+    while (t--)
+    {
+        cin >> m >> n;
+
+        if ((!(m % 2) && (n % 2)) || ((m % 2) && !(n % 2)))
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
+    }
+
+    return 0;
+}
