@@ -1,0 +1,45 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void pierw(int a)
+{
+    if(a<2){cout<<"NIE"<<endl;}else{
+    bool pierwsza=false;
+    int i,c;
+        c=2;
+    for(i=2;i<a;i=i+1)
+    {
+       if((a%c)==0) {pierwsza=false;cout<<"NIE"<<endl;break;}
+       else{
+            pierwsza=true;
+       c=c+1;}}
+       if(c>(a-2))
+        {cout<<"TAK"<<endl;}
+   }
+}
+
+int main() {
+    
+    int n,l;
+    cin>>n;
+    int a[n];
+   l=0;
+    for(int i=0;i<n;i=i+1)
+    {
+        cin>>a[l];
+        l=l+1;
+    }
+    l=0;
+    for(int i=0;i<n;i=i+1)
+    {
+        pierw(a[l]);
+        l=l+1;
+    }
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
