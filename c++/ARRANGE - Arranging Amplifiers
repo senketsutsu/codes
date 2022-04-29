@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main()
+{
+    int ile;
+    cin>>ile;
+    int i;
+    int am[100000];
+    int a[100000];
+    for (i=0; i<ile; i++)
+    {
+        int Ni,j,je=0;
+        cin >> Ni;
+        for (j=0; j<Ni; j++)
+        {
+            int n;
+            cin >> n;
+            if (n==1) je++; else am[j-je]=n;
+        }
+        Ni-=je;
+        sort(am,am+Ni);
+        if (Ni==2 && am[0]==2 && am[1]==3);
+        else
+            reverse(am,am+Ni);
+        for (j=0; j<je; j++)
+            a[j]=1;
+        for (j=je; j<Ni+je; j++)
+            a[j]=am[j-je];
+        for (j=0; j<Ni+je-1; j++)
+            cout << a[j] << ' ';
+        cout << a[Ni+je-1] << endl;
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    return 0;
+}
