@@ -1,0 +1,30 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    long long a, b, d;
+    cin >> a;
+    for (int i = 0; i<a; i++)
+    {
+        cin >> d; 
+         b=1;
+        for (int w = 1; w <= d; w++)
+        { 
+            w=w%10000;
+            b=b%10000;
+            b = b*w;
+            while (b % 10 == 0) 
+            {
+                b = b / 10;
+            } 
+        }
+        b = b % 10;
+        cout << b << "\n";
+    }
+    return 0;
+}
