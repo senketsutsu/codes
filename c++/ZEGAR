@@ -1,0 +1,44 @@
+#include <cmath>
+#include <iostream>
+#include<string>
+#include <stdlib.h>
+
+using namespace std;
+
+const double DIV = 65.454545;
+
+int count(int n) 
+{
+    int i = 1;
+    for (i = 1; i <= 23; i++)
+    {
+        if (n >= (i - 1)*DIV && n< i*DIV)
+            return i;
+    }
+    return i;
+}
+
+int main()
+{
+    int c, h1, h2, m1, m2, t1, t2;
+    string s;
+
+    cin >> c;
+
+    while (c--)
+    {
+        cin >> s;
+        h1 = atoi(s.substr(0, 2).c_str());
+        m1 = atoi(s.substr(3, 2).c_str());
+
+        cin >> s;
+        h2 = atoi(s.substr(0, 2).c_str());
+        m2 = atoi(s.substr(3, 2).c_str());
+
+        t1 = h1 * 60 + m1;
+        t2 = h2 * 60 + m2;
+
+        cout << count(t2) - count(t1)<<endl;
+    }
+    return 0;
+}
