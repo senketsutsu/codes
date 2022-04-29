@@ -1,0 +1,30 @@
+#include <algorithm>
+#include <cmath>
+#include <cstdio>
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+string zam(string a)
+{
+    int d;
+    string c;
+    char b;
+    for(int i=0;i<a.size();i++)
+    {
+    if(a[i]<64){b=' ';}else{d=int(a[i])+3;if(d>90){d=d-26;}b=char(d);}
+    c=c+b;
+    }
+return(c);}
+int main() {
+    string a,kon;
+    int ile=0,licz=0;
+    while(getline(cin,a))
+    {
+        
+        cout<<zam(a)<<"\n";
+    }
+    
+
+return 0;
+}
