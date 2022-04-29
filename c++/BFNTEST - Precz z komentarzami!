@@ -1,0 +1,84 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    char symbol, t1, t2;
+
+    bool c1, c2, s;
+    c1=c2=s=false;
+
+    while (cin.get(symbol))
+    {
+        if (c1)
+        {
+            if (symbol == '\n')
+            {
+                c1 = false;
+                cout << symbol;
+            }
+        }
+        else if (c2)
+        {
+            while (symbol == '*')
+            {
+                if (cin.get(symbol))
+                {
+                    if (symbol == '/')
+                        c2 = false;
+                }
+                else
+                    break;
+            }
+        }
+        else
+        {
+            if (s)
+            {
+                cout << symbol;
+                if ((symbol == '\n' && t1 != '\\') || (symbol == '"' && t1 != '\\') || (symbol == '"' && t1 == '\\' && t2 == '\\'))
+
+                    s = false;
+            }
+            else
+            {
+                if (symbol == '/')
+                {
+                    t1=symbol;
+                    if (cin.get(symbol))
+                    {
+                        if (symbol == '/')
+                        {
+                            c1 = true;
+                        }
+                        else if (symbol == '*')
+                        {
+                            c2 = true;
+                        }
+                        else
+                        {
+                            cout << t1 << symbol;
+                        }
+                    }
+                    else
+                    {
+                        cout << t1;
+                        break;
+                    }
+                }
+                else
+                {
+                    if (symbol == '"' && t1 != '\'')
+                        s = true;
+                    cout << symbol;
+                }
+            }
+        }
+        t2 = t1;
+        t1=symbol;
+    }
+
+    return 0;
+}
