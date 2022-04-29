@@ -1,0 +1,27 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+long long sumuj (string a) {
+    long long suma = 0;
+    for (int i = 0; i < a.size(); i++) {
+        suma += int(a[i]-'0');
+    }
+    return suma;
+}
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    int t;
+    cin >> t;
+    while (t) {
+        string w;
+        cin >> w;
+        cout << sumuj(w) << "\n";
+        t--;
+    }
+    return 0;
+}
